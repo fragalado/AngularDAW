@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1 de javaScript</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script src="main.js"></script>
+  </head>
+  <body class="bg-primary-subtle">
+    <h1 class="text-center text-secondary">Ejercicio 1 de JavaScript</h1>
+    <h2 class="text-center border-bottom text-primary-emphasis">
+      Trabajando con el DOM
+    </h2>
+    <div class="container">
+      <div class="row ">
+        <div class="col">Tienes esta página. Como verás es muy sencilla, hemos utilizado bootstrap (última versión) para darle formato. Consta de tres columnas en dos filas, la primera con tres div con algo de texto.</div>
+        <div class="col">La segunda fila contiene un par de botones, Modificar estilo y Añadir contenido. El primer botón lo utilizarás para invocar una función de JavaScript que cambie las clases (atributo classList en DOM) de bootstrap para cambiar los colores de la página (body), y el color de los títulos (hq y h2).</div>
+        <div class="col">Con el botón de Añadir contenido, crearás una fila (row) debajo del row de los botones (añadir contenido para el container. Esa fila -row- tendrá cuatro columnas (div) y dentro de cada columna una lista de tres elementos (de lo que se te ocurra). Todo el JavaScript deberá estar en el archivo main.js en el mismo directorio.</div>
+      </div>
+      <div class="row justify-content-around">
+        <div class="col-4 column-gap-4">
+          <button class="btn btn-outline-success" onclick="modificaEstilo()">Modificar Estilo</button>
+        </div>
+        <div class="col-6"><button id="listas" class="btn btn-outline-danger" onclick="anyadirContenido()">Añadir Contenido</button></div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Profesor pone aqui el script -->
+    
+  </body>
+</html>

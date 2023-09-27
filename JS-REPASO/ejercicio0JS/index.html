@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Repaso 1</title>
+    <!--
+    <script>
+        function holaMundo(){
+            // alert("Hola mundo!!");
+            let h1 = document.getElementById('titulo'); // Se deberia de poner const
+            h1.innerHTML = 'Hola Mundo!!';
+            let parrafo = document.createElement('p');
+            parrafo.style.backgroundColor = 'blue';
+            parrafo.innerText = "Este es un párrafo creado con JavaScript";
+            let div = document.querySelector(".nuevos");
+            div.appendChild(parrafo);
+
+            // Diferencia entre InnerHTML y InnerText
+            let h4 = document.getElementById('innerHTML');
+            h4.innerHTML = "Hola <i>mundo</i>";
+
+            let h5 = document.getElementById('innerText');
+            h5.innerText = "Hola <i>mundo</i>";
+        }
+    </script>
+    -->
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1 id="titulo">Título</h1>
+    <button onclick="holaMundo()">Saluda</button>
+    <div class="nuevos"></div>
+    <button onclick="colorea()">Colorea</button>
+
+    <!-- Diferencia entre InnerHTML y InnerText -->
+    <h3 id="innerHTML">Prueba InnerHTML</h3>
+    <h3 id="innerText">Prueba InnerText</h3>
+</body>
+</html>
