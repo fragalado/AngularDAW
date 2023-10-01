@@ -12,7 +12,7 @@ class Shape {
     }
 
     shoutout(){
-        return "El area del " + nombre + " es " + this.area + "cm cuadrados.";
+        return "El area del " + name + " es " + this.area + "cm cuadrados.";
     }
 }
 
