@@ -110,3 +110,88 @@ class Moto extends Vehiculo{
 let yamaha = new Moto("Gasolina", 2);
 console.log(yamaha.combustible);
 console.log(yamaha.ruedas);
+
+// Clases abstractas
+abstract class Arma {
+    // Constructor
+    constructor(public nombre: string, public fuerza: number, private magia: boolean) { 
+    }
+
+    // Métodos
+}
+
+// let espada: Arma = new Arma(); NO se puede porque es un clase abstracta
+
+class Espada extends Arma {}
+
+let anduril = new Espada("anduril", 100, true);
+console.log(anduril);
+console.log(anduril.nombre);
+console.log(anduril.fuerza);
+
+class Metralleta extends Arma {
+    constructor(nombre: string, fuerza: number, magia: boolean ,public propietario: string) {
+        super(nombre, fuerza, magia);
+    }
+}
+
+// Interfaces
+interface Xmen {
+    nombre: string;
+    poder: string;
+    esDeLosBuenos?: boolean;
+}
+let lobezno: Xmen = {nombre: 'Logan', poder: ''};
+lobezno.poder = 'Regeneracion';
+lobezno.esDeLosBuenos = true;
+
+interface Xmen2 {
+    nombre: string;
+    nombreReal ?: string;
+    regenerar(nombreReal: string): void;
+}
+
+class Mutante implements Xmen2 {
+    constructor(public nombre: string, public poder: string) {
+    }
+
+    regenerar(nombre: string): void {
+        console.log(`El mutante se llama ${nombre}`);
+        this.nombre = nombre;
+    }
+}
+let mutante: Mutante = new Mutante("Hulk", "Fuerza");
+console.log(mutante);
+mutante.regenerar("Thor");
+
+// Interfaces para funciones
+interface FuncionConDosNumeros {
+    (num1: number, num2: number): number
+}
+
+let sumar: FuncionConDosNumeros = (a: number, b: number) =>{
+    return a+b;
+}
+console.log(sumar);
+console.log(sumar(2,3));
+
+function nombreFuncion(parametros:string):string{
+    return 'lo que sea';
+}
+let miFuncion = function(numero:number): number{
+    return 1;
+}
+let otraFuncion = (nombre:string) =>{
+    return 'lo que sea';
+}
+
+// Extender interfaces
+interface Ordenador {
+    marca: string;
+    color: string;
+}
+
+interface Portatil extends Ordenador {
+
+}
+
