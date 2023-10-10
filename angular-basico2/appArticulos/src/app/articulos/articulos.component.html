@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <app-listado (detalleArticulo)="articuloActivo($event)"></app-listado>
+        </div>
+        <div class="col" *ngIf="articulo">
+            <app-ficha-articulo [articulo]="articulo"></app-ficha-articulo>
+        </div>
+    </div>
+</div>

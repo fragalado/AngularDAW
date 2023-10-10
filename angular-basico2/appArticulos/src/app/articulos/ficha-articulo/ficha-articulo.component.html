@@ -1,0 +1,14 @@
+<div class="card" style="width: 18rem;" *ngIf="articulo">
+    <img src="{{articulo.imagen}}" class="card-img-top" alt="{{articulo.nombre}}" *ngIf="articulo.imagen">
+    <div class="card-body">
+      <h5 class="card-title">{{articulo.nombre}}</h5>
+      <p class="card-text">
+        Familia: {{articulo.familia}} <br>
+        Proveedor: {{articulo.proveedor}} <br>
+        Stock: {{articulo.stock}} <br>
+      </p>
+      <div class="bg-primary">
+        {{articulo.precio}} €
+      </div>
+    </div>
+  </div>
