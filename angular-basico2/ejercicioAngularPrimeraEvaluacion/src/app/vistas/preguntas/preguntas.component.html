@@ -1,0 +1,13 @@
+<div class="text-center" style="margin-top: 10px;"> <h4>Preguntas</h4> </div>
+<div class="row border" style="padding: 8px; margin: 3px;" *ngFor="let pregunta of preguntas">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12">
+                    <p><b>{{pregunta.pregunta}}</b></p>
+                </div>
+                <div class="col-12">
+                    <p>{{pregunta.respuesta}}</p>
+                </div>
+            </div>
+        </div>
+</div>

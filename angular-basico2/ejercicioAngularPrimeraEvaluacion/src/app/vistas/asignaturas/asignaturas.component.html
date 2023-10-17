@@ -1,0 +1,14 @@
+<div class="text-center" style="margin-top: 10px;"> <h4>Asignaturas</h4> </div>
+<div class="row" *ngFor="let asignatura of asignaturas" style="padding: 8px;">
+    <div class="col border">
+        <p>{{asignatura.nombre}}</p>
+    </div>
+
+    <div class="col border">
+        <p>{{asignatura.siglas}}</p>
+    </div>
+
+    <div class="col border">
+        <p>{{asignatura.profesor}}</p>
+    </div>
+</div>
