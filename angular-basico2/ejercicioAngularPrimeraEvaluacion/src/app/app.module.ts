@@ -6,6 +6,7 @@ import { CabeceraComponent } from './vistas/cabecera/cabecera.component';
 import { AsignaturasComponent } from './vistas/asignaturas/asignaturas.component';
 import { PreguntasComponent } from './vistas/preguntas/preguntas.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

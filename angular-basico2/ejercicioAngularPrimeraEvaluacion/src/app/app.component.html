@@ -3,20 +3,13 @@
   <div class="row">
     <div class="col border border-primary border-2 text-center" style="padding: 7px;">
       <app-cabecera></app-cabecera>
+      <!-- Botones -->
+      <nav>
+        <button type="button" class="btn btn-primary botones" routerLink="/preguntas">Preguntas</button>
+        <button type="button" class="btn btn-success botones" routerLink="/asignaturas">Asignaturas</button>
+      </nav>
     </div>
   </div>
 
-  <!-- Asignaturas y Preguntas -->
-  <div class="row" style="margin-top: 20px;">
-    <!-- Asignaturas -->
-    <div class="col border border-success border-2">
-      <app-asignaturas></app-asignaturas>
-    </div>
-
-    <!-- Preguntas -->
-    <div class="col border border-danger border-2">
-      <app-preguntas></app-preguntas>
-    </div>
-  </div>
-
+  <router-outlet></router-outlet>
 </div>
