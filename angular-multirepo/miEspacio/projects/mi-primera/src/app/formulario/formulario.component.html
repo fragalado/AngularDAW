@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+<p>{{fecha}}</p>
+<p>{{fecha | date:"dd/MM/yyyy"}}</p>
+<p>Moneda formato americano: {{sueldo | currency}}</p>
+<p>Moneda formato americano, con simbolo euro: {{sueldo | currency:"EUR"}}</p>
+<p>Moneda formato americano: {{sueldo | currency:"EUR":true}}</p>
+<p>Moneda formato americano: {{sueldo | currency:"EUR":false}}</p>
+<br>
+<div class="container bg">
+    <br>
+    <input class="form-control" [(ngModel)]="nombre" (keyup)="cambiaNombre()"><br>
+    <input class="form-control" [(ngModel)]="nombre2" (keyup)="cambiaNombre2()"><br>
+</div>
+<br>
+<div *ngIf="nombre" class="container bg2">
+    <h3>Hola {{ nombre }} / {{ nombre2 }}</h3>
+</div>

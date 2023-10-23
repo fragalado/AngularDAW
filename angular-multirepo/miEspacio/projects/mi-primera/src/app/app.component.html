@@ -1,0 +1,31 @@
+<h1>{{title}}</h1>
+<input type="checkbox" (change)="checkFondo()">
+Fondo. (fondoAmarillo = {{fondoAmarillo}})<br>
+<input type="checkbox" (change)="checkLetra()">
+Tam.letra. (letraGrande = {{letraGrande}})
+<hr>
+<div [ngClass]="asignaClases()">
+    Este texto variará según el resultado del método.<br>
+    Si fondoAmarillo=true -> el fondo será amarillo.<br>
+    Si letraGrande=true -> las letras serán grandes.
+</div>
+<hr>
+
+<div>
+    <h4>Mi nombre: {{prueba}}</h4>
+    <input type="text" [(ngModel)]="prueba">
+</div>
+
+<hr>
+
+<app-formulario></app-formulario>
+
+<br>
+
+<div>
+    <h3 class="text-center">Pipe personalizada</h3>
+    <p><b>Pipes personalizados: divisionEnteraPipe</b></p>
+    <div>Dividendo: <input [(ngModel)]="dividendo"></div>
+    <div>Divisor: <input [(ngModel)]="divisor"></div>
+    <p> Resultado: {{dividendo | divisionEntera: divisor}}</p>
+</div>
