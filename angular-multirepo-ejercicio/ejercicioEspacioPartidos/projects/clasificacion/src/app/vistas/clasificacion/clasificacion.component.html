@@ -1,0 +1,28 @@
+<table class="table table-bordered table-hover table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Equipo</th>
+        <th scope="col">PJ</th>
+        <th scope="col">G</th>
+        <th scope="col">E</th>
+        <th scope="col">P</th>
+        <th scope="col">GF</th>
+        <th scope="col">GC</th>
+        <th scope="col">Pt</th>
+        <th scope="col">GoalAverage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fila of clasificacion">
+        <td>{{fila.equipo | titlecase}}</td>
+        <td>{{fila.pj}}</td>
+        <td>{{fila.g}}</td>
+        <td>{{fila.e}}</td>
+        <td>{{fila.p}}</td>
+        <td>{{fila.gf}}</td>
+        <td>{{fila.gc}}</td>
+        <td>{{fila.g*3 + fila.e}}</td>
+        <td>{{fila.gf - fila.gc}}</td>
+      </tr>
+    </tbody>
+  </table>

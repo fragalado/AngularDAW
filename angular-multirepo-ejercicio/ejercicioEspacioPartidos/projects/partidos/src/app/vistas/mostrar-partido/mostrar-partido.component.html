@@ -1,0 +1,12 @@
+<div class="row m-2 p-2" *ngIf="partido">
+    <form action="">
+        <div class="col-12 text-center">
+            <input type="number" style="max-width: 40px;" [(ngModel)]="partido.golesLocal" value="{{partido.golesLocal}}" name="first" min="0" required> {{partido.equipoLocal}} - {{partido.equipoVisitante}}
+            <input type="number" style="max-width: 40px;" [(ngModel)]="partido.golesVisitante" value="{{partido.golesVisitante}}" name="second" min="0" required>
+        </div>
+        <!--
+        <div class="col-12 text-center" style="margin-top: 20px;" *ngIf="index">
+            <input type="button" style="background-color: aqua;" (click)="actualizaPartido(partido, index)" value="Guardar">
+        </div> -->
+    </form>
+</div>

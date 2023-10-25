@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col">
+        <div class="text-center border border-2 m-3 p-2 rounded-3" style="background-color: #BAB8B8;"
+            *ngFor="let partido of listaPartidos" (click)="partidoActivo(partido)">
+            <h5>{{partido.equipoLocal | titlecase}} <span style="color: #CF5353;">{{partido.golesLocal}} </span>-<span
+                style="color: #CF5353;"> {{partido.golesVisitante}}</span> {{partido.equipoVisitante | titlecase}}</h5>
+        </div>
+    </div>
+
+    <div class="col-4 m-3 p-2 border border-2 rounded-3" style="background-color: #BAB8B8;" 
+        *ngIf="selectedPartido">
+        <app-mostrar-partido [partido]="selectedPartido" [index]="selectedPartidoIndex"></app-mostrar-partido>
+    </div>
+</div>
