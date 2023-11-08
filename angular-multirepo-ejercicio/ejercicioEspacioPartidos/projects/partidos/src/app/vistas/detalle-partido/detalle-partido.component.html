@@ -1,0 +1,10 @@
+<div class="row" *ngIf="partido">
+    <div class="col">
+        <input type="number" [(ngModel)]="partido.golesLocal">
+    </div>
+    <div class="col text-center">{{partido.equipoLocal}}</div>
+    <div class="col text-center">{{partido.equipoVisitante}}</div>
+    <div class="col">
+        <input type="number" [(ngModel)]="partido.golesVisitante">
+    </div>
+</div>

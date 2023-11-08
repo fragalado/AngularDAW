@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Partidos } from '../../modelos/partidos';
+import { Partido } from '../../modelos/partido';
 import { PartidosService } from '../../servicios/partidos.service';
 
 @Component({
@@ -8,13 +8,13 @@ import { PartidosService } from '../../servicios/partidos.service';
   styleUrls: ['./mostrar-partido.component.css']
 })
 export class MostrarPartidoComponent {
-  @Input() partido?: Partidos;
+  @Input() partido?: Partido;
   @Input() index?: number = -1;
 
   constructor(private partidoService: PartidosService) {
     
   }
-  actualizaPartido(partido: Partidos, i: number): void {
+  actualizaPartido(partido: Partido, i: number): void {
     this.partidoService.guardarUnPartido(partido, i - 1);
   }
 }

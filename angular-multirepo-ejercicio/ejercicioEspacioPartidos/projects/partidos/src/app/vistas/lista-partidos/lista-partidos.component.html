@@ -1,0 +1,15 @@
+<div class="container bg-light clearfix" style="height:40vw;">
+    <h1 class="text-center">Lista de Partidos</h1>
+    <ul class="nav nav-tabs bg-light">
+        <li class="nav-item nav-link text-white bg-dark" (click)="pedirJornada(1)">Jornada 1</li>
+        <li class="nav-item nav-link text-white bg-dark" (click)="pedirJornada(2)">Jornada 2</li>
+        <li class="nav-item nav-link text-white bg-dark" (click)="pedirJornada(3)">Jornada 3</li>
+    </ul>
+    <div lass="container nav-link h-100"> <!-- convertir en tabla -->
+        <div class="row bg-light">
+            <div class="col-12 p-3 m-2" *ngFor="let partido of listaPartidos; let i=index">
+                <app-detalle-partido [partido]="partido" [index]="i"></app-detalle-partido>
+            </div>
+        </div>
+    </div>
+</div>

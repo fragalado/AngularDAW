@@ -1,0 +1,21 @@
+{
+  "targets": {
+    "partidos-futbol-cd4aa": {
+      "hosting": {
+        "partidos": [
+          "partidos-futbol-cd4aa"
+        ]
+      }
+    },
+    "ludoteca-gfa": {
+      "hosting": {
+        "ludoteca": [
+          "ludoteca-gfa"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ludoteca-gfa"
+  }
+}

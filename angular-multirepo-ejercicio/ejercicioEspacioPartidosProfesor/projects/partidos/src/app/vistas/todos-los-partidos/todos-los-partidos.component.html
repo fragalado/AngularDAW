@@ -1,0 +1,8 @@
+<h2>Lista de partidos fija</h2>
+<div *ngFor="let partido of partidosService.listaPartidos">
+    <div class="w-50 m-auto border">
+        <span>{{partido.equipoLocal}}</span>:{{partido.golesLocal}}
+        <b>X</b>
+        {{partido.golesVisitante}} :<span>{{partido.equipoVisitante}}</span> 
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="constrain" *ngIf="agente">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <div  class="card" style="width: 18rem;">
+          <img src="{{agente.avatar}}" class="card-img-top" alt="{{agente.first_name}}">
+          <h5 style="text-align: center;" class="card-title">{{agente.first_name}} {{agente.last_name}}</h5>
+          <div class="card-body">
+              <ul class="list-group list-group-flush">
+                  <input [(ngModel)]="agente.first_name" placeholder="name">
+                  <input [(ngModel)]="agente.last_name" placeholder="name">
+                  <input [(ngModel)]="agente.email" placeholder="name">
+                </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>

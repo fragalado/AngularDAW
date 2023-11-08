@@ -1,0 +1,14 @@
+<h1 class="text-center">Lista de Partidos</h1>
+<ul class="list-group">
+    <li class="list-group-item" (click)="pedirJornada(1)">Jornada 1</li>
+    <li class="list-group-item" (click)="pedirJornada(2)">Jornada 2</li>
+    <li class="list-group-item" (click)="pedirJornada(3)">Jornada 3</li>
+</ul>
+<div lass="container">
+    <div class="row">
+        <div class="col-12 p-3 m-2" 
+        *ngFor="let partido of listaPartidos; let i=index">
+            <app-detalle-partido [partido]="partido" [index]="i"></app-detalle-partido>
+        </div>
+    </div>
+</div>

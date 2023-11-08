@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Partidos } from '../../modelos/partidos';
+import { Partido } from '../../modelos/partido';
 import { PartidosService } from '../../servicios/partidos.service';
 
 @Component({
@@ -8,9 +8,9 @@ import { PartidosService } from '../../servicios/partidos.service';
   styleUrls: ['./partidos.component.css']
 })
 export class PartidosComponent {
-  listaPartidos: Partidos[] = []; // Variable donde guardaremos todos los partidos
+  listaPartidos: Partido[] = []; // Variable donde guardaremos todos los partidos
 
-  selectedPartido?: Partidos; // Variable que guardara el partido seleccionado
+  selectedPartido?: Partido; // Variable que guardara el partido seleccionado
   selectedPartidoIndex?: number; // Variable que guardara el index del partido
 
   constructor(private partidosService: PartidosService) {}
@@ -29,7 +29,7 @@ export class PartidosComponent {
   // Metodo que recibira un partido
   // Si el partido es igual a selectedPartido guardara undefined
   // Si el partido es distinto guardara el partido en la variable selectedPartido
-  partidoActivo(partido: Partidos): void {
+  partidoActivo(partido: Partido): void {
     if(partido == this.selectedPartido)
       this.selectedPartido = undefined;
     else

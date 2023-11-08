@@ -1,0 +1,32 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Equipo</th>
+      <th scope="col">PJ</th>
+      <th scope="col">PG</th>
+      <th scope="col">PE</th>
+      <th scope="col">PP</th>
+      <th scope="col">GF</th>
+      <th scope="col">GC</th>
+      <th scope="col">Puntos</th>
+      <th scope="col">Dif. Goles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let equipo of equipos; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>
+        {{ equipo.nombre }}
+      </td>
+      <td>{{ equipo.pj }}</td>
+      <td>{{ equipo.ganados }}</td>
+      <td>{{ equipo.empatados }}</td>
+      <td>{{ equipo.perdidos }}</td>
+      <td>{{ equipo.golesFavor }}</td>
+      <td>{{ equipo.golesContra }}</td>
+      <td>{{ equipo.puntos }}</td>
+      <td>{{ equipo.goalAverage }}</td>
+    </tr>
+  </tbody>
+</table>

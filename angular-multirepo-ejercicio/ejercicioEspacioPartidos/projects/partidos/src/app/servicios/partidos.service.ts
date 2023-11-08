@@ -1,26 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from "rxjs";
-import { Partidos } from '../modelos/partidos';
+import { Partido } from '../modelos/partido';
 import { PARTIDOS } from '../modelos/mock-partidos';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PartidosService {
-  listaPartidos: Partidos[] = [];
+  listaPartidos: Partido[] = [];
 
   constructor() { }
 
-  getPartidos(): Observable<Partidos[]> {
+  getPartidos(): Observable<Partido[]> {
     const partidos = of(PARTIDOS);
     return partidos;
   }
 
-  guardarPartidos(partido: Partidos[]): void {
+  guardarPartidos(partido: Partido[]): void {
     this.listaPartidos = partido;
   }
 
-  guardarUnPartido(partido: Partidos, i: number): void {
+  guardarUnPartido(partido: Partido, i: number): void {
     this.listaPartidos[i] = partido;
     console.log(partido);
     console.log(i);
@@ -28,7 +28,7 @@ export class PartidosService {
     console.log(this.listaPartidos[0].equipoLocal + " " + this.listaPartidos[0].equipoVisitante + " " + this.listaPartidos[0].golesLocal + " " + this.listaPartidos[0].golesVisitante)
   }
 
-  crearPartido(partido: Partidos): void {
+  crearPartido(partido: Partido): void {
     this.listaPartidos.push(partido);
   }
 }
