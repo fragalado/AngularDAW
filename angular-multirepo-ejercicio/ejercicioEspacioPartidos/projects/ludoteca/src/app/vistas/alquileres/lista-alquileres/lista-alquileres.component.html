@@ -1,0 +1,21 @@
+<div class="row" *ngIf="alquileres">
+    <div class="col">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let alquiler of alquileres">
+                <div style="float: left;">
+                    <b>Juego:</b> ;
+                    <b style="margin-left: 20px;">Usuario:</b> 
+                </div>
+                <div style="float: right;">
+                    <i class="bi bi-trash text-danger" style="margin-right: 4px;" (click)="deleteAlquiler(alquiler)"></i>
+                    <i class="bi bi-pencil-square text-success" routerLink="/alquileres/detalle/{{alquiler.id}}"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col text-center m-3">
+        <button type="button" class="btn btn-primary" routerLink="/alquileres/agregar">Añadir</button>
+    </div>
+</div>
