@@ -3,8 +3,8 @@
         <ul class="list-group">
             <li class="list-group-item" *ngFor="let alquiler of alquileres">
                 <div style="float: left;">
-                    <b>Juego:</b> ;
-                    <b style="margin-left: 20px;">Usuario:</b> 
+                    <b>Juego:</b> {{alquiler.juego.nombreJuego}};
+                    <b style="margin-left: 20px;">Usuario:</b>  {{alquiler.usuario.nombre}} {{alquiler.usuario.apellidos}}
                 </div>
                 <div style="float: right;">
                     <i class="bi bi-trash text-danger" style="margin-right: 4px;" (click)="deleteAlquiler(alquiler)"></i>

@@ -1,22 +1,33 @@
 <div class="row" *ngIf="usuarios">
     <div class="col">
-        <ul class="list-group">
-            <li class="list-group-item" *ngFor="let usuario of usuarios">
-                <div style="float: left;" *ngIf="usuario">
-                    <b>Nombre:</b> {{usuario.nombre}};
-                    <b style="margin-left: 20px;">Apellidos:</b> {{usuario.apellidos}};
-                    <b style="margin-left: 20px;">Email:</b> {{usuario.email}}
-                </div>
-                <div style="float: right;">
-                    <i class="bi bi-trash text-danger" style="margin-right: 4px;" (click)="eliminaUsuario(usuario)"></i>
-                    <i class="bi bi-pencil-square text-success" routerLink="/usuarios/detalle/{{usuario.id}}"></i>
-                </div>
-            </li>
-        </ul>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Del/Add</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let usuario of usuarios; let i= index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{usuario.nombre}}</td>
+                    <td>{{usuario.apellidos}}</td>
+                    <td>{{usuario.email}}</td>
+                    <td>
+                        <i class="bi bi-trash text-danger" style="margin-left: 6px;" (click)="eliminaUsuario(usuario)"></i>
+                        <i class="bi bi-pencil-square text-success" style="margin-left: 16px;" routerLink="/usuarios/detalle/{{usuario.id}}"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 <div class="row">
     <div class="col text-center m-3">
-        <button type="button" class="btn btn-primary" style="margin-top: 15px; margin-bottom: 15px;" routerLink="/usuarios/agregar">Añadir</button>
+        <button type="button" class="btn btn-primary" style="margin-top: 15px; margin-bottom: 15px;"
+            routerLink="/usuarios/agregar">Añadir</button>
     </div>
 </div>

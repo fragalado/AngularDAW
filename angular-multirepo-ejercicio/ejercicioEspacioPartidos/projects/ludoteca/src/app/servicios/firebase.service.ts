@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Firestore, addDoc, collection, collectionData, docData } from '@angular/fire/firestore';
 import { deleteDoc, doc, setDoc } from 'firebase/firestore';
+import { Alquiler } from '../modelos/alquiler';
 
 @Injectable({
   providedIn: 'root'

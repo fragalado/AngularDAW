@@ -2,16 +2,17 @@
     <div class="mb-3">
         <label for="juego" class="form-label">Juego</label>
         <select id="juego" class="form-select">
-            <option selected></option>
-            <option *ngFor="let juego of juegos">{{juego.nombreJuego}}</option>
+            <option selected>{{alquiler.juego.nombreJuego}}</option>
+            <option></option>
         </select>
     </div>
     <div class="mb-3">
         <label for="usuario" class="form-label">Usuario</label>
         <select id="usuario" class="form-select">
-            <option selected></option>
-            <option *ngFor="let usuario of usuarios">{{usuario.nombre}} {{usuario.apellidos}}</option>
+            <option selected>{{alquiler.usuario.nombre}} {{alquiler.usuario.apellidos}}</option>
+            <option></option>
         </select>
     </div>
     <button type="submit" class="btn btn-primary">Enviar</button>
+    <button type="button" class="btn btn-secondary" style="float: right;" routerLink="/alquileres/listado">Volver</button>
 </form>

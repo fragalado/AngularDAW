@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FirebaseService } from '../../../servicios/firebase.service';
 import { Usuario } from '../../../modelos/usuario';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-lista-usuarios',
@@ -18,7 +19,17 @@ export class ListaUsuariosComponent {
   }
 
   eliminaUsuario(usuario: Usuario){
-    this.fbs.deleteFireBase(usuario, "usuarios");
+    this.fbs.deleteFireBase(usuario, "usuarios")
+      .then(() => Swal.fire({
+        title: "Eliminado!",
+        text: "Usuario ha sido eliminado",
+        icon: 'success'
+      }))
+      .catch(() => Swal.fire({
+        title: "Oops...!",
+        text: "El usuario no ha sido eliminado",
+        icon: 'error'
+      }));
   }
 
 }
