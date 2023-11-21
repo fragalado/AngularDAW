@@ -13,9 +13,16 @@
           "ludoteca-gfa"
         ]
       }
+    },
+    "ejemplo-chart": {
+      "hosting": {
+        "ejemploChart": [
+          "ejemplo-chart"
+        ]
+      }
     }
   },
   "projects": {
-    "default": "ludoteca-gfa"
+    "default": "ejemplo-chart"
   }
 }

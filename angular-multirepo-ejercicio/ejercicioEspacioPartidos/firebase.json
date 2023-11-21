@@ -9,6 +9,11 @@
       "target": "ludoteca",
       "source": ".",
       "frameworksBackend": {}
+    },
+    {
+      "target": "ejemploChart",
+      "source": ".",
+      "frameworksBackend": {}
     }
   ]
 }

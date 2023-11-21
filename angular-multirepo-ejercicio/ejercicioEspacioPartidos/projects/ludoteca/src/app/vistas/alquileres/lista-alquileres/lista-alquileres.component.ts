@@ -27,7 +27,6 @@ export class ListaAlquileresComponent {
   // El método obtendrá el juego que tenga ese id y el usuario que tenga el id
   obtieneAlquiler() {
     // Limpiamos la lista alquileres
-    this.alquileres = [];
 
     // Obtenemos los alquileres de la base de datos
     this.fbs.getFireBase("alquileres").subscribe(res => {

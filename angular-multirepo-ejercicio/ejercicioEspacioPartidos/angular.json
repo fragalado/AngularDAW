@@ -436,6 +436,115 @@
           }
         }
       }
+    },
+    "ejemploChart": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/ejemplo-chart",
+      "sourceRoot": "projects/ejemplo-chart/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ejemplo-chart",
+            "index": "projects/ejemplo-chart/src/index.html",
+            "main": "projects/ejemplo-chart/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/ejemplo-chart/tsconfig.app.json",
+            "assets": [
+              "projects/ejemplo-chart/src/favicon.ico",
+              "projects/ejemplo-chart/src/assets"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "projects/ejemplo-chart/src/styles.css"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/chart.js/dist/chart.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "projects/ejemplo-chart/src/environments/environment.ts",
+                  "with": "projects/ejemplo-chart/src/environments/environment.development.ts"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ejemploChart:build:production"
+            },
+            "development": {
+              "browserTarget": "ejemploChart:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ejemploChart:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/ejemplo-chart/tsconfig.spec.json",
+            "assets": [
+              "projects/ejemplo-chart/src/favicon.ico",
+              "projects/ejemplo-chart/src/assets"
+            ],
+            "styles": [
+              "projects/ejemplo-chart/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2,
+            "browserTarget": "ejemploChart:build:production"
+          }
+        }
+      }
     }
   }
 }
