@@ -1,11 +1,17 @@
-import { Time } from "@angular/common";
+import { Cliente } from "./cliente";
 
 export interface Cita {
-    nombre: string;
-    telefono: string;
-    email: string;
-    dni: string;
+    entrevistadoPor: string;
+    cliente: Cliente;
     visto: boolean;
-    diaCita: Date;
-    horaCita: Time;
+    diaCita: string;
+    horaCita: string;
+}
+
+export interface DatosCita {
+    entrevistadoPor: string;
+    idCliente: string;
+    visto: boolean;
+    diaCita: string;
+    horaCita: string;
 }

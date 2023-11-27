@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Cliente } from 'src/app/modelos/cliente';
 import { DatabaseService } from 'src/app/servicios/database.service';
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-detalle-cliente',
@@ -40,14 +41,30 @@ export class DetalleClienteComponent {
   // Método que actualiza un cliente según el id
   updateCliente(){
     this.dbs.updateDocument(this.cliente, "clientes")
-      .then(() => console.log("Cliente actualizado con éxito"))
-      .catch(error => console.error(error));
+    .then(() => Swal.fire({
+      title: "Actualizado!",
+      text: "El cliente ha sido actualizado",
+      icon: "success"
+    }))
+    .catch(() => Swal.fire({
+      title: "Oops...!",
+      text: "El cliente no ha sido actualizado",
+      icon: "error"
+    }));
   }
 
   // Método que agrega un cliente a la base de datos
   agregaCliente(){
     this.dbs.newDocument(this.cliente, "clientes")
-      .then(() => console.log("Cliente agregado con éxito"))
-      .catch(error => console.error(error));
+      .then(() => Swal.fire({
+        title: "Guardado!",
+        text: "El cliente ha sido guardado",
+        icon: "success"
+      }))
+      .catch(() => Swal.fire({
+        title: "Oops...!",
+        text: "El cliente no ha sido guardado",
+        icon: "error"
+      }));
   }
 }
