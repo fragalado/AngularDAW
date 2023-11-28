@@ -5,6 +5,7 @@ import { CitasRoutingModule } from './citas-routing.module';
 import { CitasComponent } from './citas.component';
 import { ListaCitasComponent } from './lista-citas/lista-citas.component';
 import { DetalleCitaComponent } from './detalle-cita/detalle-cita.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { DetalleCitaComponent } from './detalle-cita/detalle-cita.component';
   ],
   imports: [
     CommonModule,
-    CitasRoutingModule
+    CitasRoutingModule,
+    FormsModule
   ]
 })
 export class CitasModule { }
