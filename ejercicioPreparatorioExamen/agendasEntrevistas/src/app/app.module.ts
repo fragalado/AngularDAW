@@ -9,11 +9,13 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment.development';
 import { MenuComponent } from './vistas/core/menu/menu.component';
 import { FormsModule } from '@angular/forms';
+import { BienvenidaComponent } from './vistas/core/bienvenida/bienvenida.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    BienvenidaComponent
   ],
   imports: [
     BrowserModule,

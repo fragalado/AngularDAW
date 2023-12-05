@@ -9,7 +9,7 @@ import { DatabaseService } from 'src/app/servicios/database.service';
 })
 export class ListaCitasComponent {
   datosCitas?: DatosCita[];
-  citas: Cita[]  = [];
+  citas: Cita[] = [];
 
   // Variables para la fecha
   hoy = new Date();
@@ -20,76 +20,32 @@ export class ListaCitasComponent {
   constructor(private dbs: DatabaseService) { }
 
   ngOnInit() {
-    this.obtenerCitasDia2();
+    this.obtenerCitasDia();
   }
 
+  // Método que obtiene las citas del día desde la base de datos.
+  // Si no existe ninguna cita las crea.
   obtenerCitasDia() {
     // Limpiamos el array citas
     this.citas = [];
 
-    // Obtenemos el dia de hoy
-    const fecha = this.dia + "" + this.mes + "" + this.anyo; // Formato: 28112023
-
-    // Ahora obtenemos las citas del dia de hoy
-    this.dbs.getCollection("agenda/" + fecha + "/citas").subscribe((res) => {
-      // Si res es vacio, es decir, no existe ninguna cita, las vamos a crear
-      if (res.length == 0) {
-        // Llamamos al método addCitas
-        this.addCitas();
-
-      } else {
-        this.datosCitas = res
-
-        // Recorremos ahora el array datosCitas
-        this.datosCitas.forEach((cita) => {
-
-          // Buscamos el cliente
-          // Si el idCliente esta vacio no buscaremos cliente
-          if (cita.idCliente == "") {
-            // Añadimos a la lista de citas
-            const citaCambio: Cita = {
-              diaCita: cita.diaCita,
-              entrevistadoPor: cita.entrevistadoPor,
-              horaCita: cita.horaCita,
-              visto: cita.visto,
-              id: cita.id
-            }
-            this.citas.push(citaCambio);
-          } else {
-            this.dbs.getDocumentById(cita.idCliente, "clientes").subscribe((cliente) => {
-              // Añadimos a la lista citas
-              const citaCambio: Cita = {
-                diaCita: cita.diaCita,
-                cliente: cliente,
-                entrevistadoPor: cita.entrevistadoPor,
-                horaCita: cita.horaCita,
-                visto: cita.visto,
-                id: cita.id
-              }
-              this.citas.push(citaCambio);
-            })
-          }
-        })
-      }
-    });
-  }
-
-  obtenerCitasDia2() {
     // Construye la fecha en formato "ddmmaaaa"
     const fecha = `${this.dia}${this.mes}${this.anyo}`;
-  
+
     // Obtiene las citas del día de la base de datos
     this.dbs.getCollection(`agenda/${fecha}/citas`).subscribe((res) => {
       // Verifica si no hay citas y llama a la función para agregarlas
       if (res.length === 0) {
-        this.addCitas();
+        this.addCitas(); // No hay citas, se agregan llamando a la función addCitas
       } else {
         // Procesa cada cita
         this.datosCitas = res;
+
+        // Itera sobre cada cita obtenida
         this.datosCitas.forEach((cita) => {
           if (!cita.idCliente) {
-            // Si la cita no tiene un cliente asociado
-            console.log("No tiene idCliente la cita");
+            // Si la cita no tiene un cliente asociado,
+            // Crea una nueva cita sin el cliente
             const citaCambio: Cita = {
               diaCita: cita.diaCita,
               entrevistadoPor: cita.entrevistadoPor,
@@ -97,13 +53,12 @@ export class ListaCitasComponent {
               visto: cita.visto,
               id: cita.id
             };
+            // Agrega la nueva cita al array de citas
             this.citas.push(citaCambio);
-            console.log("No tiene idCliente");
-            console.log(this.citas);
           } else {
             // Si la cita tiene un cliente asociado, obtén la información del cliente
             this.dbs.getDocumentById(cita.idCliente, "clientes").subscribe((cliente) => {
-              console.log(cliente);
+              // Crea una nueva cita con los datos completos, incluyendo el cliente
               const citaCambio: Cita = {
                 id: cita.id,
                 diaCita: cita.diaCita,
@@ -112,9 +67,8 @@ export class ListaCitasComponent {
                 visto: cita.visto,
                 cliente: cliente,
               };
+              // Agrega la nueva cita al array de citas
               this.citas.push(citaCambio);
-              console.log("Tiene idCliente");
-              console.log(this.citas);
             });
           }
         });
